@@ -1,5 +1,10 @@
 package com.biz.grade.domain;
 
+/*
+ * 클래스를 선언(만들기)하고 다른 클래스를 별도로 상속받지 않았을경우 
+ * 모든 클래스는 java의 최상위 부모 클래스인 object를 자동으로 상속받는다
+ */
+
 public class ScoreVO {
 	
 	private String num;
@@ -9,7 +14,26 @@ public class ScoreVO {
 	private int music;
 	
 	private int sum;
-	private int avg;
+	private float avg;
+	
+	
+	/*
+	 *  보통 VO(DTO)클래스를 정의할때
+	 *  object로 부터 상속받은 toString() method를 재정의하는데
+	 *  필드변수에 담긴 값들을 보여주는 method코드로 재 작성을 한다
+	 *  이기능은 이클립스의 source / generate toString 
+	 */
+	
+	@Override
+	public String toString() {
+		return "ScoreVO [num=" + num + ", kor=" + kor + ", eng=" + eng + ", math=" + math + ", music=" + music
+				+ ", sum=" + sum + ", avg=" + avg + "]";
+	}
+	
+	
+	
+	
+	
 	public String getNum() {
 		return num;
 	}
@@ -46,10 +70,10 @@ public class ScoreVO {
 	public void setSum(int sum) {
 		this.sum = sum;
 	}
-	public int getAvg() {
+	public float getAvg() {
 		return avg;
 	}
-	public void setAvg(int avg) {
+	public void setAvg(float avg) {
 		this.avg = avg;
 	}
 
